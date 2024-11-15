@@ -3,7 +3,7 @@
   <sourceEnd id="93381b51-262a-480d-9a2b-873dad368e17" type="NavigationSourceEnd" typeId="97a3de8a-c9bf-4cf2-bc0a-b8692b02211b">
     <name>goBackToDetails</name>
     <display>goBackToDetails: OwnerDetailComponent</display>
-    <order>5</order>
+    <order>6</order>
     <typeReference id="5db407d9-1d04-46c5-9c6e-bfba63feb5d8">
       <typeId>c3549af2-c500-48a1-ac11-4be486cbc0de</typeId>
       <isNavigable>true</isNavigable>

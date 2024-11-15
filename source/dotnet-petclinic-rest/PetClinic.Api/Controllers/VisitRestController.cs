@@ -23,11 +23,13 @@ namespace PetClinic.Api.Controllers
     public class VisitRestController : ControllerBase
     {
         private readonly IVisitService _appService;
+        private readonly IValidationService _validationService;
         private readonly IUnitOfWork _unitOfWork;
 
-        public VisitRestController(IVisitService appService, IUnitOfWork unitOfWork)
+        public VisitRestController(IVisitService appService, IValidationService validationService, IUnitOfWork unitOfWork)
         {
             _appService = appService ?? throw new ArgumentNullException(nameof(appService));
+            _validationService = validationService ?? throw new ArgumentNullException(nameof(validationService));
             _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
         }
 
@@ -35,17 +37,19 @@ namespace PetClinic.Api.Controllers
         /// </summary>
         /// <response code="200">Returns the specified VisitDTO.</response>
         /// <response code="400">One or more validation errors have occurred.</response>
-        /// <response code="404">Can't find an VisitDTO with the parameters provided.</response>
+        /// <response code="404">No VisitDTO could be found with the provided parameters.</response>
         [HttpGet("{visitId}")]
         [ProducesResponseType(typeof(VisitDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<VisitDTO>> GetVisit([FromRoute] int visitId, CancellationToken cancellationToken)
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<VisitDTO>> GetVisit(
+            [FromRoute] int visitId,
+            CancellationToken cancellationToken = default)
         {
             var result = default(VisitDTO);
-            result = await _appService.GetVisit(visitId);
-            return result != null ? Ok(result) : NotFound();
+            result = await _appService.GetVisit(visitId, cancellationToken);
+            return result == null ? NotFound() : Ok(result);
         }
 
         /// <summary>
@@ -55,13 +59,16 @@ namespace PetClinic.Api.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult> AddVisit([FromBody] VisitCreateDTO dto, CancellationToken cancellationToken)
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult> AddVisit(
+            [FromBody] VisitCreateDTO dto,
+            CancellationToken cancellationToken = default)
         {
+            await _validationService.Handle(dto, cancellationToken);
             using (var transaction = new TransactionScope(TransactionScopeOption.Required,
                 new TransactionOptions() { IsolationLevel = IsolationLevel.ReadCommitted }, TransactionScopeAsyncFlowOption.Enabled))
             {
-                await _appService.AddVisit(dto);
+                await _appService.AddVisit(dto, cancellationToken);
                 await _unitOfWork.SaveChangesAsync(cancellationToken);
                 transaction.Complete();
             }
@@ -72,19 +79,22 @@ namespace PetClinic.Api.Controllers
         /// </summary>
         /// <response code="204">Successfully updated.</response>
         /// <response code="400">One or more validation errors have occurred.</response>
+        /// <response code="404">One or more entities could not be found with the provided parameters.</response>
         [HttpPut("{visitId}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult> UpdateVisit(
             [FromRoute] int visitId,
             [FromBody] VisitUpdateDTO dto,
-            CancellationToken cancellationToken)
+            CancellationToken cancellationToken = default)
         {
+            await _validationService.Handle(dto, cancellationToken);
             using (var transaction = new TransactionScope(TransactionScopeOption.Required,
                 new TransactionOptions() { IsolationLevel = IsolationLevel.ReadCommitted }, TransactionScopeAsyncFlowOption.Enabled))
             {
-                await _appService.UpdateVisit(visitId, dto);
+                await _appService.UpdateVisit(visitId, dto, cancellationToken);
                 await _unitOfWork.SaveChangesAsync(cancellationToken);
                 transaction.Complete();
             }
@@ -95,16 +105,18 @@ namespace PetClinic.Api.Controllers
         /// </summary>
         /// <response code="200">Successfully deleted.</response>
         /// <response code="400">One or more validation errors have occurred.</response>
+        /// <response code="404">One or more entities could not be found with the provided parameters.</response>
         [HttpDelete("{visitId}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult> DeleteVisit([FromRoute] int visitId, CancellationToken cancellationToken)
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult> DeleteVisit([FromRoute] int visitId, CancellationToken cancellationToken = default)
         {
             using (var transaction = new TransactionScope(TransactionScopeOption.Required,
                 new TransactionOptions() { IsolationLevel = IsolationLevel.ReadCommitted }, TransactionScopeAsyncFlowOption.Enabled))
             {
-                await _appService.DeleteVisit(visitId);
+                await _appService.DeleteVisit(visitId, cancellationToken);
                 await _unitOfWork.SaveChangesAsync(cancellationToken);
                 transaction.Complete();
             }

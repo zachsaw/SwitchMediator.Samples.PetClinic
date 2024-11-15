@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Intent.RoslynWeaver.Attributes;
 
 [assembly: DefaultIntentManaged(Mode.Ignore)]
-[assembly: IntentTemplate("Intent.Entities.DomainEntity", Version = "1.0")]
 
 namespace PetClinic.Domain.Entities
 {

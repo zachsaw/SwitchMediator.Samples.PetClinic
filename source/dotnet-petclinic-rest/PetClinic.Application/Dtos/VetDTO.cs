@@ -15,6 +15,9 @@ namespace PetClinic.Application.Dtos
     {
         public VetDTO()
         {
+            FirstName = null!;
+            LastName = null!;
+            Specialties = null!;
         }
 
         public static VetDTO Create(int id, string firstName, string lastName, List<SpecialtyDTO> specialties)

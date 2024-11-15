@@ -12,9 +12,12 @@ namespace PetClinic.Application.Dtos
     {
         public VetUpdateDTO()
         {
+            FirstName = null!;
+            LastName = null!;
+            Specialties = null!;
         }
 
-        public static VetUpdateDTO Create(string firstName, string lastName, IEnumerable<int> specialties)
+        public static VetUpdateDTO Create(string firstName, string lastName, List<int> specialties)
         {
             return new VetUpdateDTO
             {
@@ -28,7 +31,7 @@ namespace PetClinic.Application.Dtos
 
         public string LastName { get; set; }
 
-        public IEnumerable<int> Specialties { get; set; }
+        public List<int> Specialties { get; set; }
 
     }
 }

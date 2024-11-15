@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using AutoMapper;
 using Intent.RoslynWeaver.Attributes;
 using Microsoft.EntityFrameworkCore;
 using PetClinic.Domain.Entities;
@@ -18,7 +19,7 @@ namespace PetClinic.Infrastructure.Repositories
     public class PetRepository : RepositoryBase<Pet, Pet, ApplicationDbContext>, IPetRepository
     {
         [IntentManaged(Mode.Ignore, Signature = Mode.Fully)]
-        public PetRepository(ApplicationDbContext dbContext) : base(dbContext)
+        public PetRepository(ApplicationDbContext dbContext, IMapper mapper) : base(dbContext, mapper)
         {
         }
 

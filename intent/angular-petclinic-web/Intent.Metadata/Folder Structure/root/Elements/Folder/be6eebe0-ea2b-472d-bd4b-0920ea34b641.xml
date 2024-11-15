@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="be6eebe0-ea2b-472d-bd4b-0920ea34b641" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>service-proxies</name>
+  <display>service-proxies</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>8574d6d3-c1a8-443e-a1bd-69db3235811f</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="12697b36-9ffb-426c-b3a5-0cf1fc4fe027" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.ServiceProxies.ApiService</name>
+      <display>Intent.Angular.ServiceProxies.ApiService</display>
+      <externalReference>Intent.Angular.ServiceProxies</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>be6eebe0-ea2b-472d-bd4b-0920ea34b641</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

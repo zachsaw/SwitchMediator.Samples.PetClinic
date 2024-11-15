@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using Intent.RoslynWeaver.Attributes;
 using PetClinic.Application.Dtos;
 using PetClinic.Application.Interfaces;
+using PetClinic.Domain.Common.Exceptions;
 using PetClinic.Domain.Common.Interfaces;
 using PetClinic.Domain.Entities;
 using PetClinic.Domain.Repositories;
@@ -30,21 +32,21 @@ namespace PetClinic.Application.Implementation
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public async Task<List<PetTypeDTO>> GetAllPetTypes()
+        public async Task<List<PetTypeDTO>> GetAllPetTypes(CancellationToken cancellationToken = default)
         {
             var elements = await _petTypeRepository.FindAllAsync();
             return elements.MapToPetTypeDTOList(_mapper);
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public async Task<PetTypeDTO> GetPetType(int petTypeId)
+        public async Task<PetTypeDTO> GetPetType(int petTypeId, CancellationToken cancellationToken = default)
         {
             var element = await _petTypeRepository.FindByIdAsync(petTypeId);
             return element.MapToPetTypeDTO(_mapper);
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public async Task<int> AddPetType(PetTypeDTO dto)
+        public async Task<int> AddPetType(PetTypeDTO dto, CancellationToken cancellationToken = default)
         {
             var newPetType = new PetType
             {
@@ -57,14 +59,14 @@ namespace PetClinic.Application.Implementation
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public async Task UpdatePetType(int petTypeId, PetTypeDTO dto)
+        public async Task UpdatePetType(int petTypeId, PetTypeDTO dto, CancellationToken cancellationToken = default)
         {
             var existingPetType = await _petTypeRepository.FindByIdAsync(petTypeId);
             existingPetType.Name = dto.Name;
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public async Task DeletePetType(int petTypeId)
+        public async Task DeletePetType(int petTypeId, CancellationToken cancellationToken = default)
         {
             var existingPetType = await _petTypeRepository.FindByIdAsync(petTypeId);
             _petTypeRepository.Remove(existingPetType);

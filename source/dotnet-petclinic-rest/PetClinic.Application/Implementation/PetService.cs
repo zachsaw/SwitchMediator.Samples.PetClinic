@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using Intent.RoslynWeaver.Attributes;
 using PetClinic.Application.Dtos;
 using PetClinic.Application.Interfaces;
+using PetClinic.Domain.Common.Exceptions;
 using PetClinic.Domain.Entities;
 using PetClinic.Domain.Repositories;
 
@@ -27,14 +29,14 @@ namespace PetClinic.Application.Implementation
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public async Task<PetDTO> GetPet(int petId)
+        public async Task<PetDTO> GetPet(int petId, CancellationToken cancellationToken = default)
         {
             var element = await _petRepository.FindByIdAsync(petId);
             return element.MapToPetDTO(_mapper);
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public async Task AddPet(PetCreateDTO dto)
+        public async Task AddPet(PetCreateDTO dto, CancellationToken cancellationToken = default)
         {
             var newPet = new Pet
             {
@@ -48,7 +50,7 @@ namespace PetClinic.Application.Implementation
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public async Task UpdatePet(int petId, PetUpdateDTO dto)
+        public async Task UpdatePet(int petId, PetUpdateDTO dto, CancellationToken cancellationToken = default)
         {
             var existingPet = await _petRepository.FindByIdAsync(petId);
             existingPet.Name = dto.Name;
@@ -56,7 +58,7 @@ namespace PetClinic.Application.Implementation
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public async Task DeletePet(int petId)
+        public async Task DeletePet(int petId, CancellationToken cancellationToken = default)
         {
             var existingPet = await _petRepository.FindByIdAsync(petId);
             _petRepository.Remove(existingPet);

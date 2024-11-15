@@ -12,6 +12,7 @@ namespace PetClinic.Application.Dtos
     {
         public VisitCreateDTO()
         {
+            Description = null!;
         }
 
         public static VisitCreateDTO Create(int petId, DateTime visitDate, string description)

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using Intent.RoslynWeaver.Attributes;
 using PetClinic.Application.Dtos;
@@ -12,16 +13,11 @@ namespace PetClinic.Application.Interfaces
 
     public interface ISpecialtyService : IDisposable
     {
-
-        Task<List<SpecialtyDTO>> GetAllSpecialties();
-
-        Task<SpecialtyDTO> GetSpecialty(int specialtyId);
-
-        Task<int> AddSpecialty(SpecialtyDTO dto);
-
-        Task UpdateSpecialty(int specialtyId, SpecialtyDTO dto);
-
-        Task DeleteSpecialty(int specialtyId);
+        Task<List<SpecialtyDTO>> GetAllSpecialties(CancellationToken cancellationToken = default);
+        Task<SpecialtyDTO> GetSpecialty(int specialtyId, CancellationToken cancellationToken = default);
+        Task<int> AddSpecialty(SpecialtyDTO dto, CancellationToken cancellationToken = default);
+        Task UpdateSpecialty(int specialtyId, SpecialtyDTO dto, CancellationToken cancellationToken = default);
+        Task DeleteSpecialty(int specialtyId, CancellationToken cancellationToken = default);
 
     }
 }

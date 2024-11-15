@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<association id="ab6b8701-a18b-4c3f-85c0-519d91d7b2de">
+  <sourceEnd id="91a91cb5-044c-4b74-aa88-0d1838c77df4" type="Call Service Operation Action Source End" typeId="936e090c-8408-429d-b2f6-2eb8deecc428">
+    <display>: onSubmit</display>
+    <order>0</order>
+    <typeReference id="59dd272d-6c28-4fcd-b1c9-5d0691eb0cd5">
+      <typeId>86b79645-62af-447a-9d7e-25f1d0867b0c</typeId>
+      <isNavigable>true</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>Web Client</typePackageName>
+      <typePackageId>a58ecbe3-16da-44ee-a67b-edc733f9a696</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <metadata />
+    <childElements />
+  </sourceEnd>
+  <targetEnd id="ab6b8701-a18b-4c3f-85c0-519d91d7b2de" type="Call Service Operation Action Target End" typeId="475f0810-2b4a-40da-8eb8-697cb62f7dbe">
+    <display>@call updateOwner(ownerId: int, dto: OwnerUpdateDTO): void</display>
+    <order>0</order>
+    <typeReference id="7eed8c97-790e-4ba6-8edc-9573b7cc3218">
+      <typeId>2ddd5525-95be-40db-ac81-8ef07a5c120b</typeId>
+      <isNavigable>true</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>Services</typePackageName>
+      <typePackageId>147d0c0c-dc3a-4658-abf6-2a0f67e14f82</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <mappings>
+      <mapping type="Call Service Mapping" typeId="e4a4111b-cf13-4efe-8a5d-fea9457ac8ad">
+        <source applicationId="81d02285-f500-491b-bbc9-7c84dfe74a94" designerId="f492faed-0665-4513-9853-5a230721786f" elementId="ef943808-bc52-42dc-8898-8f77d6c07f93" location="[Pet Clinic Web (Angular)].[Web Client].[OwnerAddComponent]" />
+        <target applicationId="3b9a6d6e-1cf0-4aea-b0bc-adac6ace7c4b" designerId="81104ae6-2bc5-4bae-b05a-f987b0372d81" elementId="2ddd5525-95be-40db-ac81-8ef07a5c120b" location="[Pet Clinic Web (Angular)].[Web Client].[updateOwner]" />
+        <mappedEnds />
+      </mapping>
+    </mappings>
+    <metadata />
+    <childElements />
+  </targetEnd>
+  <associationType>Call Service Operation Action</associationType>
+  <associationTypeId>fe5a5cd8-aabd-472f-8d42-f5c233e658dc</associationTypeId>
+  <stereotypes />
+</association>

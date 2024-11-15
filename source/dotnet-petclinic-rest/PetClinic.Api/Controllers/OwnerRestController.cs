@@ -23,11 +23,13 @@ namespace PetClinic.Api.Controllers
     public class OwnerRestController : ControllerBase
     {
         private readonly IOwnerService _appService;
+        private readonly IValidationService _validationService;
         private readonly IUnitOfWork _unitOfWork;
 
-        public OwnerRestController(IOwnerService appService, IUnitOfWork unitOfWork)
+        public OwnerRestController(IOwnerService appService, IValidationService validationService, IUnitOfWork unitOfWork)
         {
             _appService = appService ?? throw new ArgumentNullException(nameof(appService));
+            _validationService = validationService ?? throw new ArgumentNullException(nameof(validationService));
             _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
         }
 
@@ -36,11 +38,11 @@ namespace PetClinic.Api.Controllers
         /// <response code="200">Returns the specified List&lt;OwnerDTO&gt;.</response>
         [HttpGet]
         [ProducesResponseType(typeof(List<OwnerDTO>), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<List<OwnerDTO>>> GetOwners(CancellationToken cancellationToken)
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<List<OwnerDTO>>> GetOwners(CancellationToken cancellationToken = default)
         {
             var result = default(List<OwnerDTO>);
-            result = await _appService.GetOwners();
+            result = await _appService.GetOwners(cancellationToken);
             return Ok(result);
         }
 
@@ -51,13 +53,16 @@ namespace PetClinic.Api.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult> AddOwner([FromBody] OwnerCreateDTO dto, CancellationToken cancellationToken)
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult> AddOwner(
+            [FromBody] OwnerCreateDTO dto,
+            CancellationToken cancellationToken = default)
         {
+            await _validationService.Handle(dto, cancellationToken);
             using (var transaction = new TransactionScope(TransactionScopeOption.Required,
                 new TransactionOptions() { IsolationLevel = IsolationLevel.ReadCommitted }, TransactionScopeAsyncFlowOption.Enabled))
             {
-                await _appService.AddOwner(dto);
+                await _appService.AddOwner(dto, cancellationToken);
                 await _unitOfWork.SaveChangesAsync(cancellationToken);
                 transaction.Complete();
             }
@@ -68,36 +73,41 @@ namespace PetClinic.Api.Controllers
         /// </summary>
         /// <response code="200">Returns the specified OwnerDTO.</response>
         /// <response code="400">One or more validation errors have occurred.</response>
-        /// <response code="404">Can't find an OwnerDTO with the parameters provided.</response>
+        /// <response code="404">No OwnerDTO could be found with the provided parameters.</response>
         [HttpGet("{ownerId}")]
         [ProducesResponseType(typeof(OwnerDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<OwnerDTO>> GetOwner([FromRoute] int ownerId, CancellationToken cancellationToken)
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<OwnerDTO>> GetOwner(
+            [FromRoute] int ownerId,
+            CancellationToken cancellationToken = default)
         {
             var result = default(OwnerDTO);
-            result = await _appService.GetOwner(ownerId);
-            return result != null ? Ok(result) : NotFound();
+            result = await _appService.GetOwner(ownerId, cancellationToken);
+            return result == null ? NotFound() : Ok(result);
         }
 
         /// <summary>
         /// </summary>
         /// <response code="204">Successfully updated.</response>
         /// <response code="400">One or more validation errors have occurred.</response>
+        /// <response code="404">One or more entities could not be found with the provided parameters.</response>
         [HttpPut("{ownerId}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult> UpdateOwner(
             [FromRoute] int ownerId,
             [FromBody] OwnerUpdateDTO dto,
-            CancellationToken cancellationToken)
+            CancellationToken cancellationToken = default)
         {
+            await _validationService.Handle(dto, cancellationToken);
             using (var transaction = new TransactionScope(TransactionScopeOption.Required,
                 new TransactionOptions() { IsolationLevel = IsolationLevel.ReadCommitted }, TransactionScopeAsyncFlowOption.Enabled))
             {
-                await _appService.UpdateOwner(ownerId, dto);
+                await _appService.UpdateOwner(ownerId, dto, cancellationToken);
                 await _unitOfWork.SaveChangesAsync(cancellationToken);
                 transaction.Complete();
             }
@@ -108,16 +118,18 @@ namespace PetClinic.Api.Controllers
         /// </summary>
         /// <response code="200">Successfully deleted.</response>
         /// <response code="400">One or more validation errors have occurred.</response>
+        /// <response code="404">One or more entities could not be found with the provided parameters.</response>
         [HttpDelete("{ownerId}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult> DeleteOwner([FromRoute] int ownerId, CancellationToken cancellationToken)
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult> DeleteOwner([FromRoute] int ownerId, CancellationToken cancellationToken = default)
         {
             using (var transaction = new TransactionScope(TransactionScopeOption.Required,
                 new TransactionOptions() { IsolationLevel = IsolationLevel.ReadCommitted }, TransactionScopeAsyncFlowOption.Enabled))
             {
-                await _appService.DeleteOwner(ownerId);
+                await _appService.DeleteOwner(ownerId, cancellationToken);
                 await _unitOfWork.SaveChangesAsync(cancellationToken);
                 transaction.Complete();
             }
@@ -131,13 +143,13 @@ namespace PetClinic.Api.Controllers
         [HttpGet("*/lastname/{lastName}")]
         [ProducesResponseType(typeof(List<OwnerDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<List<OwnerDTO>>> GetOwnersList(
             [FromRoute] string lastName,
-            CancellationToken cancellationToken)
+            CancellationToken cancellationToken = default)
         {
             var result = default(List<OwnerDTO>);
-            result = await _appService.GetOwnersList(lastName);
+            result = await _appService.GetOwnersList(lastName, cancellationToken);
             return Ok(result);
         }
 

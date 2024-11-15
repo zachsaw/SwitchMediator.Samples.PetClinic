@@ -12,10 +12,18 @@
     </FileLog>
     <FileLog>
       <ProjectId>5d91708c-d384-4d24-8bb6-9e11e9039f8b</ProjectId>
-      <CorrelationId>Intent.Modules.AspNetCore.Cors.CorsConfiguration</CorrelationId>
+      <CorrelationId>Intent.AspNetCore.Cors.CorsConfiguration</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../source/dotnet-petclinic-rest/PetClinic.Api/Configuration/CorsConfiguration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>CorsConfiguration.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>5d91708c-d384-4d24-8bb6-9e11e9039f8b</ProjectId>
+      <CorrelationId>Intent.AspNetCore.ProblemDetailsConfiguration</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../source/dotnet-petclinic-rest/PetClinic.Api/Configuration/ProblemDetailsConfiguration.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>ProblemDetailsConfiguration.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
@@ -76,18 +84,10 @@
     </FileLog>
     <FileLog>
       <ProjectId>4c6804de-2e91-44ca-a1c9-6538577f79d2</ProjectId>
-      <CorrelationId>Intent.AspNetCore.Swashbuckle.AuthorizeCheckOperationFilter</CorrelationId>
+      <CorrelationId>Intent.AspNetCore.Controllers.ExceptionFilter</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>../../source/dotnet-petclinic-rest/PetClinic.Api/Filters/AuthorizeCheckOperationFilter.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>AuthorizeCheckOperationFilter.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>4c6804de-2e91-44ca-a1c9-6538577f79d2</ProjectId>
-      <CorrelationId>Intent.AspNetCore.Controllers.FluentValidation.FluentValidationFilter</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>../../source/dotnet-petclinic-rest/PetClinic.Api/Filters/FluentValidationFilter.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>FluentValidationFilter.cs</ProjectRelativeFilePath>
+      <ApplicationRelativeFilePath>../../source/dotnet-petclinic-rest/PetClinic.Api/Filters/ExceptionFilter.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>ExceptionFilter.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
@@ -110,8 +110,8 @@
       <ProjectId>aad0939b-56a1-4294-aa6b-930d17d22a3d</ProjectId>
       <CorrelationId>Intent.VisualStudio.Projects.CoreWeb.LaunchSettings#aad0939b-56a1-4294-aa6b-930d17d22a3d</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>../../source/dotnet-petclinic-rest/PetClinic.Api/Properties/launchsettings.json</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>Properties/launchsettings.json</ProjectRelativeFilePath>
+      <ApplicationRelativeFilePath>../../source/dotnet-petclinic-rest/PetClinic.Api/Properties/launchSettings.json</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Properties/launchSettings.json</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
@@ -420,10 +420,146 @@
     </FileLog>
     <FileLog>
       <ProjectId>9f3d11b6-702d-4f14-bdbb-7cba65a0272a</ProjectId>
+      <CorrelationId>Intent.Application.FluentValidation.Dtos.ValidationServiceInterface</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../source/dotnet-petclinic-rest/PetClinic.Application/IValidationService.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>IValidationService.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>9f3d11b6-702d-4f14-bdbb-7cba65a0272a</ProjectId>
+      <CorrelationId>Intent.Application.FluentValidation.Dtos.DTOValidator#4cd165f5-996f-4f86-b65b-26c28000f4fc</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../source/dotnet-petclinic-rest/PetClinic.Application/OwnerCreateDTOValidator.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>OwnerCreateDTOValidator.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>9f3d11b6-702d-4f14-bdbb-7cba65a0272a</ProjectId>
+      <CorrelationId>Intent.Application.FluentValidation.Dtos.DTOValidator#0f5ea2e5-56e4-49c6-8652-6532dc79334c</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../source/dotnet-petclinic-rest/PetClinic.Application/OwnerDTOValidator.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>OwnerDTOValidator.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>9f3d11b6-702d-4f14-bdbb-7cba65a0272a</ProjectId>
+      <CorrelationId>Intent.Application.FluentValidation.Dtos.DTOValidator#b4c64cd0-62c8-46ab-a693-839d6ed7b113</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../source/dotnet-petclinic-rest/PetClinic.Application/OwnerUpdateDTOValidator.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>OwnerUpdateDTOValidator.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>9f3d11b6-702d-4f14-bdbb-7cba65a0272a</ProjectId>
       <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#9f3d11b6-702d-4f14-bdbb-7cba65a0272a</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../source/dotnet-petclinic-rest/PetClinic.Application/PetClinic.Application.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>PetClinic.Application.csproj</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>9f3d11b6-702d-4f14-bdbb-7cba65a0272a</ProjectId>
+      <CorrelationId>Intent.Application.FluentValidation.Dtos.DTOValidator#aa6aeeb1-be0f-405b-9e39-3bbfcb9be518</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../source/dotnet-petclinic-rest/PetClinic.Application/PetCreateDTOValidator.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>PetCreateDTOValidator.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>9f3d11b6-702d-4f14-bdbb-7cba65a0272a</ProjectId>
+      <CorrelationId>Intent.Application.FluentValidation.Dtos.DTOValidator#c66f91c8-06bb-427a-b623-36a724d627d3</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../source/dotnet-petclinic-rest/PetClinic.Application/PetDTOValidator.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>PetDTOValidator.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>9f3d11b6-702d-4f14-bdbb-7cba65a0272a</ProjectId>
+      <CorrelationId>Intent.Application.FluentValidation.Dtos.DTOValidator#b567ee65-c344-492a-8cf0-678a444fde27</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../source/dotnet-petclinic-rest/PetClinic.Application/PetTypeDTOValidator.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>PetTypeDTOValidator.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>9f3d11b6-702d-4f14-bdbb-7cba65a0272a</ProjectId>
+      <CorrelationId>Intent.Application.FluentValidation.Dtos.DTOValidator#c92739b9-877f-4b56-8cd6-c9957a744059</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../source/dotnet-petclinic-rest/PetClinic.Application/PetUpdateDTOValidator.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>PetUpdateDTOValidator.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>9f3d11b6-702d-4f14-bdbb-7cba65a0272a</ProjectId>
+      <CorrelationId>Intent.Application.FluentValidation.Dtos.DTOValidator#bb138e4b-409a-4ea9-9bb4-a33dcfa8a682</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../source/dotnet-petclinic-rest/PetClinic.Application/PetVisitDTOValidator.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>PetVisitDTOValidator.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>9f3d11b6-702d-4f14-bdbb-7cba65a0272a</ProjectId>
+      <CorrelationId>Intent.Application.FluentValidation.Dtos.DTOValidator#569f8450-0cbb-4f32-a376-018fdd1d7f5c</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../source/dotnet-petclinic-rest/PetClinic.Application/SpecialtyDTOValidator.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>SpecialtyDTOValidator.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>9f3d11b6-702d-4f14-bdbb-7cba65a0272a</ProjectId>
+      <CorrelationId>Intent.Application.FluentValidation.Dtos.ValidationService</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../source/dotnet-petclinic-rest/PetClinic.Application/ValidationService.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>ValidationService.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>9f3d11b6-702d-4f14-bdbb-7cba65a0272a</ProjectId>
+      <CorrelationId>Intent.Application.FluentValidation.Dtos.DTOValidator#8414e6b8-558e-4eaa-bd29-550989db6176</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../source/dotnet-petclinic-rest/PetClinic.Application/VetCreateDTOValidator.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>VetCreateDTOValidator.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>9f3d11b6-702d-4f14-bdbb-7cba65a0272a</ProjectId>
+      <CorrelationId>Intent.Application.FluentValidation.Dtos.DTOValidator#d60384f8-059a-47f2-9b37-da4d913c8b49</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../source/dotnet-petclinic-rest/PetClinic.Application/VetDTOValidator.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>VetDTOValidator.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>9f3d11b6-702d-4f14-bdbb-7cba65a0272a</ProjectId>
+      <CorrelationId>Intent.Application.FluentValidation.Dtos.DTOValidator#4fbd75ee-114e-4da7-a35c-bf5590888c68</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../source/dotnet-petclinic-rest/PetClinic.Application/VetUpdateDTOValidator.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>VetUpdateDTOValidator.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>9f3d11b6-702d-4f14-bdbb-7cba65a0272a</ProjectId>
+      <CorrelationId>Intent.Application.FluentValidation.Dtos.DTOValidator#d7e8deff-e0fa-4af2-8df7-adc47bc6de84</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../source/dotnet-petclinic-rest/PetClinic.Application/VisitCreateDTOValidator.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>VisitCreateDTOValidator.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>9f3d11b6-702d-4f14-bdbb-7cba65a0272a</ProjectId>
+      <CorrelationId>Intent.Application.FluentValidation.Dtos.DTOValidator#49e21c4f-0032-4f1c-b8ef-9c6c1a2cd3cf</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../source/dotnet-petclinic-rest/PetClinic.Application/VisitDTOValidator.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>VisitDTOValidator.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>9f3d11b6-702d-4f14-bdbb-7cba65a0272a</ProjectId>
+      <CorrelationId>Intent.Application.FluentValidation.Dtos.DTOValidator#ef8cab3b-1ed9-4ff8-9227-fd68640edd0d</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../source/dotnet-petclinic-rest/PetClinic.Application/VisitUpdateDTOValidator.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>VisitUpdateDTOValidator.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
@@ -432,6 +568,14 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../source/dotnet-petclinic-rest/PetClinic.Domain/Common/CollectionExtensions.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>CollectionExtensions.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>82c2061a-f4ab-4ebf-9288-3e2d1afa00fc</ProjectId>
+      <CorrelationId>Intent.Entities.Repositories.Api.NotFoundException</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../source/dotnet-petclinic-rest/PetClinic.Domain/Common/Exceptions/NotFoundException.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>NotFoundException.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
@@ -504,6 +648,14 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../source/dotnet-petclinic-rest/PetClinic.Domain/PetClinic.Domain.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>PetClinic.Domain.csproj</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>d6e05f69-e16b-4e21-982e-8dc79b55bf9b</ProjectId>
+      <CorrelationId>Intent.EntityFrameworkCore.Repositories.EFRepositoryInterface</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../source/dotnet-petclinic-rest/PetClinic.Domain/Repositories/IEFRepository.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>IEFRepository.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>

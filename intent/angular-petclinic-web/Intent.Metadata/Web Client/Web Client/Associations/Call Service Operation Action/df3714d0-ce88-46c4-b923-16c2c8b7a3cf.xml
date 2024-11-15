@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<association id="df3714d0-ce88-46c4-b923-16c2c8b7a3cf">
+  <sourceEnd id="26ecbd83-79fc-4efe-a2d9-67c6e35f0d7b" type="Call Service Operation Action Source End" typeId="936e090c-8408-429d-b2f6-2eb8deecc428">
+    <display>: onSubmit</display>
+    <order>0</order>
+    <typeReference id="40362ee6-f700-45ae-b5ba-ed5c931bfcd8">
+      <typeId>ae7920b6-ba22-46c3-adb0-d864f88f7ba3</typeId>
+      <isNavigable>true</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>Web Client</typePackageName>
+      <typePackageId>a58ecbe3-16da-44ee-a67b-edc733f9a696</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <metadata />
+    <childElements />
+  </sourceEnd>
+  <targetEnd id="df3714d0-ce88-46c4-b923-16c2c8b7a3cf" type="Call Service Operation Action Target End" typeId="475f0810-2b4a-40da-8eb8-697cb62f7dbe">
+    <display>@call updateOwner(ownerId: int, dto: OwnerUpdateDTO): void</display>
+    <order>0</order>
+    <typeReference id="ef153f3b-adbb-4ad3-a72b-dfa577d8a6f4">
+      <typeId>2ddd5525-95be-40db-ac81-8ef07a5c120b</typeId>
+      <isNavigable>true</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>Services</typePackageName>
+      <typePackageId>147d0c0c-dc3a-4658-abf6-2a0f67e14f82</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <mappings>
+      <mapping type="Call Service Mapping" typeId="e4a4111b-cf13-4efe-8a5d-fea9457ac8ad">
+        <source applicationId="81d02285-f500-491b-bbc9-7c84dfe74a94" designerId="f492faed-0665-4513-9853-5a230721786f" elementId="8a3ab41f-c9b7-44ef-a123-25c246ec6a15" location="[Pet Clinic Web (Angular)].[Web Client].[OwnerEditComponent]" />
+        <target applicationId="3b9a6d6e-1cf0-4aea-b0bc-adac6ace7c4b" designerId="81104ae6-2bc5-4bae-b05a-f987b0372d81" elementId="2ddd5525-95be-40db-ac81-8ef07a5c120b" location="[Pet Clinic Web (Angular)].[Web Client].[updateOwner]" />
+        <mappedEnds>
+          <mappedEnd>
+            <expression>{ownerId}</expression>
+            <path>
+              <target id="2ddd5525-95be-40db-ac81-8ef07a5c120b" name="updateOwner" type="element" specialization="Operation" />
+              <target id="9052e0ae-d3f0-41f8-8390-b50c0c0b911a" name="ownerId" type="element" specialization="Parameter" />
+            </path>
+            <sources>
+              <source identifier="ownerId" mappingType="Data Mapping" mappingTypeId="ce70308a-e29d-4644-8410-f9e6bbd214fc">
+                <path>
+                  <target id="8a3ab41f-c9b7-44ef-a123-25c246ec6a15" name="OwnerEditComponent" type="element" specialization="Component" />
+                  <target id="16ae599f-65b5-4fa7-adb6-bd5728f98e59" name="ownerId" type="element" specialization="Component Input" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+          <mappedEnd>
+            <expression>{owner.firstName}</expression>
+            <path>
+              <target id="2ddd5525-95be-40db-ac81-8ef07a5c120b" name="updateOwner" type="element" specialization="Operation" />
+              <target id="e546adee-589f-4d1a-a125-f624a97a6c54" name="dto" type="element" specialization="Parameter" />
+              <target id="440c8e5e-8925-4bfa-8527-67cbe0e3a665" name="firstName" type="element" specialization="DTO-Field" />
+            </path>
+            <sources>
+              <source identifier="owner.firstName" mappingType="Data Mapping" mappingTypeId="ce70308a-e29d-4644-8410-f9e6bbd214fc">
+                <path>
+                  <target id="8a3ab41f-c9b7-44ef-a123-25c246ec6a15" name="OwnerEditComponent" type="element" specialization="Component" />
+                  <target id="b7a29c71-98c3-49f7-9b4a-4d034facc86e" name="owner" type="element" specialization="Component Model" />
+                  <target id="aeda0bbd-9fc5-407e-8b07-35afe7bddb09" name="firstName" type="element" specialization="Form Group Control" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+          <mappedEnd>
+            <expression>{owner.lastName}</expression>
+            <path>
+              <target id="2ddd5525-95be-40db-ac81-8ef07a5c120b" name="updateOwner" type="element" specialization="Operation" />
+              <target id="e546adee-589f-4d1a-a125-f624a97a6c54" name="dto" type="element" specialization="Parameter" />
+              <target id="a8993275-0ce7-4647-ac3d-cb3057d6a224" name="lastName" type="element" specialization="DTO-Field" />
+            </path>
+            <sources>
+              <source identifier="owner.lastName" mappingType="Data Mapping" mappingTypeId="ce70308a-e29d-4644-8410-f9e6bbd214fc">
+                <path>
+                  <target id="8a3ab41f-c9b7-44ef-a123-25c246ec6a15" name="OwnerEditComponent" type="element" specialization="Component" />
+                  <target id="b7a29c71-98c3-49f7-9b4a-4d034facc86e" name="owner" type="element" specialization="Component Model" />
+                  <target id="18760587-5224-4fd1-9e03-a16ad929f29d" name="lastName" type="element" specialization="Form Group Control" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+          <mappedEnd>
+            <expression>{owner.address}</expression>
+            <path>
+              <target id="2ddd5525-95be-40db-ac81-8ef07a5c120b" name="updateOwner" type="element" specialization="Operation" />
+              <target id="e546adee-589f-4d1a-a125-f624a97a6c54" name="dto" type="element" specialization="Parameter" />
+              <target id="306de96e-a1af-4f4b-a92e-9d172400580d" name="address" type="element" specialization="DTO-Field" />
+            </path>
+            <sources>
+              <source identifier="owner.address" mappingType="Data Mapping" mappingTypeId="ce70308a-e29d-4644-8410-f9e6bbd214fc">
+                <path>
+                  <target id="8a3ab41f-c9b7-44ef-a123-25c246ec6a15" name="OwnerEditComponent" type="element" specialization="Component" />
+                  <target id="b7a29c71-98c3-49f7-9b4a-4d034facc86e" name="owner" type="element" specialization="Component Model" />
+                  <target id="537965ba-3088-4ff1-b04f-2816b2572b16" name="address" type="element" specialization="Form Group Control" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+          <mappedEnd>
+            <expression>{owner.city}</expression>
+            <path>
+              <target id="2ddd5525-95be-40db-ac81-8ef07a5c120b" name="updateOwner" type="element" specialization="Operation" />
+              <target id="e546adee-589f-4d1a-a125-f624a97a6c54" name="dto" type="element" specialization="Parameter" />
+              <target id="3a6a278a-3e3c-40b8-8ce4-a540d1e02f25" name="city" type="element" specialization="DTO-Field" />
+            </path>
+            <sources>
+              <source identifier="owner.city" mappingType="Data Mapping" mappingTypeId="ce70308a-e29d-4644-8410-f9e6bbd214fc">
+                <path>
+                  <target id="8a3ab41f-c9b7-44ef-a123-25c246ec6a15" name="OwnerEditComponent" type="element" specialization="Component" />
+                  <target id="b7a29c71-98c3-49f7-9b4a-4d034facc86e" name="owner" type="element" specialization="Component Model" />
+                  <target id="5f25b775-97e6-42f0-b266-da75e971f65d" name="city" type="element" specialization="Form Group Control" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+          <mappedEnd>
+            <expression>{owner.telephone}</expression>
+            <path>
+              <target id="2ddd5525-95be-40db-ac81-8ef07a5c120b" name="updateOwner" type="element" specialization="Operation" />
+              <target id="e546adee-589f-4d1a-a125-f624a97a6c54" name="dto" type="element" specialization="Parameter" />
+              <target id="f8511ff3-8e18-4d6d-a776-76221ea2892a" name="telephone" type="element" specialization="DTO-Field" />
+            </path>
+            <sources>
+              <source identifier="owner.telephone" mappingType="Data Mapping" mappingTypeId="ce70308a-e29d-4644-8410-f9e6bbd214fc">
+                <path>
+                  <target id="8a3ab41f-c9b7-44ef-a123-25c246ec6a15" name="OwnerEditComponent" type="element" specialization="Component" />
+                  <target id="b7a29c71-98c3-49f7-9b4a-4d034facc86e" name="owner" type="element" specialization="Component Model" />
+                  <target id="c65e687b-b00f-4fa2-a680-588471c8c99b" name="telephone" type="element" specialization="Form Group Control" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+        </mappedEnds>
+      </mapping>
+    </mappings>
+    <metadata />
+    <childElements />
+  </targetEnd>
+  <associationType>Call Service Operation Action</associationType>
+  <associationTypeId>fe5a5cd8-aabd-472f-8d42-f5c233e658dc</associationTypeId>
+  <stereotypes />
+</association>

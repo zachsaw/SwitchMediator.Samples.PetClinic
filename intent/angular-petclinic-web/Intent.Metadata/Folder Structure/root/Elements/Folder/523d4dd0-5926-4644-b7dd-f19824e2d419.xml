@@ -12,166 +12,8 @@
   <stereotypes />
   <metadata />
   <childElements>
-    <childElement id="512a04e5-da38-439e-b5a0-6660b2bb9751" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
-      <name>Intent.Angular.Component.AngularComponentCss</name>
-      <display>Intent.Angular.Component.AngularComponentCss</display>
-      <externalReference>Intent.Angular</externalReference>
-      <isAbstract>false</isAbstract>
-      <genericTypes />
-      <isMapped>false</isMapped>
-      <parentFolderId>523d4dd0-5926-4644-b7dd-f19824e2d419</parentFolderId>
-      <packageId>f2f20da5-6e2a-4651-80fd-9c6e913493e6</packageId>
-      <packageName>root</packageName>
-      <stereotypes />
-      <metadata>
-        <entry key="status" value="assigned" />
-      </metadata>
-      <childElements />
-    </childElement>
-    <childElement id="dcbc44f6-977a-4127-8782-0452711ca9c1" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
-      <name>Intent.Angular.Component.AngularComponentHtml</name>
-      <display>Intent.Angular.Component.AngularComponentHtml</display>
-      <externalReference>Intent.Angular</externalReference>
-      <isAbstract>false</isAbstract>
-      <genericTypes />
-      <isMapped>false</isMapped>
-      <parentFolderId>523d4dd0-5926-4644-b7dd-f19824e2d419</parentFolderId>
-      <packageId>f2f20da5-6e2a-4651-80fd-9c6e913493e6</packageId>
-      <packageName>root</packageName>
-      <stereotypes />
-      <metadata>
-        <entry key="status" value="assigned" />
-      </metadata>
-      <childElements />
-    </childElement>
-    <childElement id="8069d564-4f46-4f69-935f-03c45f70e4c8" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
-      <name>Intent.Angular.Component.AngularComponentTs</name>
-      <display>Intent.Angular.Component.AngularComponentTs</display>
-      <externalReference>Intent.Angular</externalReference>
-      <isAbstract>false</isAbstract>
-      <genericTypes />
-      <isMapped>false</isMapped>
-      <parentFolderId>523d4dd0-5926-4644-b7dd-f19824e2d419</parentFolderId>
-      <packageId>f2f20da5-6e2a-4651-80fd-9c6e913493e6</packageId>
-      <packageName>root</packageName>
-      <stereotypes />
-      <metadata>
-        <entry key="status" value="assigned" />
-      </metadata>
-      <childElements />
-    </childElement>
-    <childElement id="9cbde5b4-b76f-4981-82bc-d5a3d1cdb5e5" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
-      <name>Intent.Angular.Core.Index</name>
-      <display>Intent.Angular.Core.Index</display>
-      <externalReference>Intent.Angular</externalReference>
-      <isAbstract>false</isAbstract>
-      <genericTypes />
-      <isMapped>false</isMapped>
-      <parentFolderId>523d4dd0-5926-4644-b7dd-f19824e2d419</parentFolderId>
-      <packageId>f2f20da5-6e2a-4651-80fd-9c6e913493e6</packageId>
-      <packageName>root</packageName>
-      <stereotypes />
-      <metadata>
-        <entry key="status" value="assigned" />
-      </metadata>
-      <childElements />
-    </childElement>
-    <childElement id="7e69f1e8-bf76-4466-8ff8-db58f79dfe5a" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
-      <name>Intent.Angular.Core.StylesDotScssFile</name>
-      <display>Intent.Angular.Core.StylesDotScssFile</display>
-      <externalReference>Intent.Angular</externalReference>
-      <isAbstract>false</isAbstract>
-      <genericTypes />
-      <isMapped>false</isMapped>
-      <parentFolderId>523d4dd0-5926-4644-b7dd-f19824e2d419</parentFolderId>
-      <packageId>f2f20da5-6e2a-4651-80fd-9c6e913493e6</packageId>
-      <packageName>root</packageName>
-      <stereotypes />
-      <metadata>
-        <entry key="status" value="assigned" />
-      </metadata>
-      <childElements />
-    </childElement>
-    <childElement id="132ef818-c26a-42e1-8dc8-638458297111" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
-      <name>Intent.Angular.Model.FormGroup</name>
-      <display>Intent.Angular.Model.FormGroup</display>
-      <externalReference>Intent.Angular</externalReference>
-      <isAbstract>false</isAbstract>
-      <genericTypes />
-      <isMapped>false</isMapped>
-      <parentFolderId>523d4dd0-5926-4644-b7dd-f19824e2d419</parentFolderId>
-      <packageId>f2f20da5-6e2a-4651-80fd-9c6e913493e6</packageId>
-      <packageName>root</packageName>
-      <stereotypes />
-      <metadata>
-        <entry key="status" value="assigned" />
-      </metadata>
-      <childElements />
-    </childElement>
-    <childElement id="f5d328c0-6cda-4f9e-852d-f0e417ebd978" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
-      <name>Intent.Angular.Model.Model</name>
-      <display>Intent.Angular.Model.Model</display>
-      <externalReference>Intent.Angular</externalReference>
-      <isAbstract>false</isAbstract>
-      <genericTypes />
-      <isMapped>false</isMapped>
-      <parentFolderId>523d4dd0-5926-4644-b7dd-f19824e2d419</parentFolderId>
-      <packageId>f2f20da5-6e2a-4651-80fd-9c6e913493e6</packageId>
-      <packageName>root</packageName>
-      <stereotypes />
-      <metadata>
-        <entry key="status" value="assigned" />
-      </metadata>
-      <childElements />
-    </childElement>
-    <childElement id="4d86f259-e2a7-4157-8a69-4b1b09a36a18" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
-      <name>Intent.Angular.Module.AngularModule</name>
-      <display>Intent.Angular.Module.AngularModule</display>
-      <externalReference>Intent.Angular</externalReference>
-      <isAbstract>false</isAbstract>
-      <genericTypes />
-      <isMapped>false</isMapped>
-      <parentFolderId>523d4dd0-5926-4644-b7dd-f19824e2d419</parentFolderId>
-      <packageId>f2f20da5-6e2a-4651-80fd-9c6e913493e6</packageId>
-      <packageName>root</packageName>
-      <stereotypes />
-      <metadata>
-        <entry key="status" value="assigned" />
-      </metadata>
-      <childElements />
-    </childElement>
-    <childElement id="c03371c2-bf4d-4e4b-9a55-71f31a261e80" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
-      <name>Intent.Angular.Module.AngularResolver</name>
-      <display>Intent.Angular.Module.AngularResolver</display>
-      <externalReference>Intent.Angular</externalReference>
-      <isAbstract>false</isAbstract>
-      <genericTypes />
-      <isMapped>false</isMapped>
-      <parentFolderId>523d4dd0-5926-4644-b7dd-f19824e2d419</parentFolderId>
-      <packageId>f2f20da5-6e2a-4651-80fd-9c6e913493e6</packageId>
-      <packageName>root</packageName>
-      <stereotypes />
-      <metadata />
-      <childElements />
-    </childElement>
-    <childElement id="6938ad6b-0b97-412b-8830-b221ba671907" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
-      <name>Intent.Angular.Module.AngularRoutingModule</name>
-      <display>Intent.Angular.Module.AngularRoutingModule</display>
-      <externalReference>Intent.Angular</externalReference>
-      <isAbstract>false</isAbstract>
-      <genericTypes />
-      <isMapped>false</isMapped>
-      <parentFolderId>523d4dd0-5926-4644-b7dd-f19824e2d419</parentFolderId>
-      <packageId>f2f20da5-6e2a-4651-80fd-9c6e913493e6</packageId>
-      <packageName>root</packageName>
-      <stereotypes />
-      <metadata>
-        <entry key="status" value="assigned" />
-      </metadata>
-      <childElements />
-    </childElement>
     <childElement id="b3a2d2c5-0215-4428-981d-0a678b522a79" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
-      <name>Intent.Angular.ServiceProxies.Proxies.AngularServiceProxy</name>
+      <name>Intent.Angular.ServiceProxies.AngularServiceProxy</name>
       <display>Intent.Angular.ServiceProxies.Proxies.AngularServiceProxy</display>
       <externalReference>Intent.Angular.ServiceProxies</externalReference>
       <isAbstract>false</isAbstract>
@@ -187,7 +29,7 @@
       <childElements />
     </childElement>
     <childElement id="fd113dae-4b10-424e-a71b-9faf2b269925" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
-      <name>Intent.Angular.ServiceProxies.Proxies.JsonResponse</name>
+      <name>Intent.Angular.ServiceProxies.JsonResponse</name>
       <display>Intent.Angular.ServiceProxies.Proxies.JsonResponse</display>
       <externalReference>Intent.Angular.ServiceProxies</externalReference>
       <isAbstract>false</isAbstract>
@@ -196,6 +38,146 @@
       <parentFolderId>523d4dd0-5926-4644-b7dd-f19824e2d419</parentFolderId>
       <packageId>f2f20da5-6e2a-4651-80fd-9c6e913493e6</packageId>
       <packageName>root</packageName>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="762dfd46-7f60-46be-8380-f0b1b1def3d4" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.Component.AngularComponentCss</name>
+      <display>Intent.Angular.Component.AngularComponentCss</display>
+      <externalReference>Intent.Angular</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>523d4dd0-5926-4644-b7dd-f19824e2d419</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="a49890dd-10b3-433a-8091-ce12ccd1c729" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.Component.AngularComponentHtml</name>
+      <display>Intent.Angular.Component.AngularComponentHtml</display>
+      <externalReference>Intent.Angular</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>523d4dd0-5926-4644-b7dd-f19824e2d419</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="c4cee081-a6c1-42e8-9e97-e365320aeb02" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.Component.AngularComponentTs</name>
+      <display>Intent.Angular.Component.AngularComponentTs</display>
+      <externalReference>Intent.Angular</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>523d4dd0-5926-4644-b7dd-f19824e2d419</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="11a86545-0142-4f50-bf12-4fb5ac8ef0ee" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.Core.Index</name>
+      <display>Intent.Angular.Core.Index</display>
+      <externalReference>Intent.Angular</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>523d4dd0-5926-4644-b7dd-f19824e2d419</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="b9c89616-3803-4e6c-8b15-5b2bead1b32e" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.Core.StylesDotScssFile</name>
+      <display>Intent.Angular.Core.StylesDotScssFile</display>
+      <externalReference>Intent.Angular</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>523d4dd0-5926-4644-b7dd-f19824e2d419</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="51d4d560-8654-4f05-9adb-440e9001fa05" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.Model.FormGroup</name>
+      <display>Intent.Angular.Model.FormGroup</display>
+      <externalReference>Intent.Angular</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>523d4dd0-5926-4644-b7dd-f19824e2d419</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="fbc9481a-e203-4ae2-b31b-74175a27c4fa" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.Model.Model</name>
+      <display>Intent.Angular.Model.Model</display>
+      <externalReference>Intent.Angular</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>523d4dd0-5926-4644-b7dd-f19824e2d419</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="621dd870-70e2-428b-9430-840c314f2b33" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.Module.AngularModule</name>
+      <display>Intent.Angular.Module.AngularModule</display>
+      <externalReference>Intent.Angular</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>523d4dd0-5926-4644-b7dd-f19824e2d419</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="8d4ed854-0383-40ed-8ce0-a970121d61c2" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.Module.AngularResolver</name>
+      <display>Intent.Angular.Module.AngularResolver</display>
+      <externalReference>Intent.Angular</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>523d4dd0-5926-4644-b7dd-f19824e2d419</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="b2619eda-a1a5-43aa-96e9-2f1002474137" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.Module.AngularRoutingModule</name>
+      <display>Intent.Angular.Module.AngularRoutingModule</display>
+      <externalReference>Intent.Angular</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>523d4dd0-5926-4644-b7dd-f19824e2d419</parentFolderId>
       <stereotypes />
       <metadata>
         <entry key="status" value="assigned" />

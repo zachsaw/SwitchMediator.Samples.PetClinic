@@ -15,6 +15,7 @@ namespace PetClinic.Application.Dtos
     {
         public SpecialtyDTO()
         {
+            Name = null!;
         }
 
         public static SpecialtyDTO Create(int? id, string name)

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using Intent.RoslynWeaver.Attributes;
 using PetClinic.Application.Dtos;
@@ -12,18 +13,12 @@ namespace PetClinic.Application.Interfaces
 
     public interface IOwnerService : IDisposable
     {
-
-        Task<List<OwnerDTO>> GetOwners();
-
-        Task AddOwner(OwnerCreateDTO dto);
-
-        Task<OwnerDTO> GetOwner(int ownerId);
-
-        Task UpdateOwner(int ownerId, OwnerUpdateDTO dto);
-
-        Task DeleteOwner(int ownerId);
-
-        Task<List<OwnerDTO>> GetOwnersList(string lastName);
+        Task<List<OwnerDTO>> GetOwners(CancellationToken cancellationToken = default);
+        Task AddOwner(OwnerCreateDTO dto, CancellationToken cancellationToken = default);
+        Task<OwnerDTO> GetOwner(int ownerId, CancellationToken cancellationToken = default);
+        Task UpdateOwner(int ownerId, OwnerUpdateDTO dto, CancellationToken cancellationToken = default);
+        Task DeleteOwner(int ownerId, CancellationToken cancellationToken = default);
+        Task<List<OwnerDTO>> GetOwnersList(string lastName, CancellationToken cancellationToken = default);
 
     }
 }

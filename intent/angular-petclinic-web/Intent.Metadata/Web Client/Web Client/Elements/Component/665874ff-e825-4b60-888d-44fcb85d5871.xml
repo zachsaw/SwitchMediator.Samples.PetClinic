@@ -114,7 +114,7 @@
           <sort-children>by-type-then-manually</sort-children>
           <genericTypes />
           <isMapped>true</isMapped>
-          <mappedClass>
+          <mappedClass isRoot="true">
             <applicationId>81d02285-f500-491b-bbc9-7c84dfe74a94</applicationId>
             <metadataId>f492faed-0665-4513-9853-5a230721786f</metadataId>
             <mappingSettingsId>510bf1dc-08d2-4184-9358-499b96e41586</mappingSettingsId>
@@ -197,7 +197,7 @@
               <isAbstract>false</isAbstract>
               <genericTypes />
               <isMapped>true</isMapped>
-              <mappedClass>
+              <mappedClass isRoot="true">
                 <applicationId>81d02285-f500-491b-bbc9-7c84dfe74a94</applicationId>
                 <metadataId>f492faed-0665-4513-9853-5a230721786f</metadataId>
                 <mappingSettingsId>67e826e4-cf1c-4554-ab6f-be922c2d6a9f</mappingSettingsId>
@@ -228,7 +228,7 @@
               <isAbstract>false</isAbstract>
               <genericTypes />
               <isMapped>true</isMapped>
-              <mappedClass>
+              <mappedClass isRoot="true">
                 <applicationId>81d02285-f500-491b-bbc9-7c84dfe74a94</applicationId>
                 <metadataId>f492faed-0665-4513-9853-5a230721786f</metadataId>
                 <mappingSettingsId>67e826e4-cf1c-4554-ab6f-be922c2d6a9f</mappingSettingsId>

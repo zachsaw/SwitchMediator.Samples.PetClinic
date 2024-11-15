@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using Intent.RoslynWeaver.Attributes;
 using PetClinic.Application.Dtos;
 using PetClinic.Application.Interfaces;
+using PetClinic.Domain.Common.Exceptions;
 using PetClinic.Domain.Entities;
 using PetClinic.Domain.Repositories;
 
@@ -29,21 +31,21 @@ namespace PetClinic.Application.Implementation
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public async Task<List<VetDTO>> GetAllVets()
+        public async Task<List<VetDTO>> GetAllVets(CancellationToken cancellationToken = default)
         {
             var elements = await _vetRepository.FindAllAsync();
             return elements.MapToVetDTOList(_mapper);
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public async Task<VetDTO> GetVet(int vetId)
+        public async Task<VetDTO> GetVet(int vetId, CancellationToken cancellationToken = default)
         {
             var element = await _vetRepository.FindByIdAsync(vetId);
             return element.MapToVetDTO(_mapper);
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public async Task AddVet(VetCreateDTO dto)
+        public async Task AddVet(VetCreateDTO dto, CancellationToken cancellationToken = default)
         {
             var specialties = await _specialtyRepository.FindByIdsAsync(dto.Specialties.ToArray());
             var newVet = new Vet
@@ -57,7 +59,7 @@ namespace PetClinic.Application.Implementation
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public async Task UpdateVet(int vetId, VetUpdateDTO dto)
+        public async Task UpdateVet(int vetId, VetUpdateDTO dto, CancellationToken cancellationToken = default)
         {
             var specialties = await _specialtyRepository.FindByIdsAsync(dto.Specialties.ToArray());
             var existingVet = await _vetRepository.FindByIdAsync(vetId);
@@ -67,7 +69,7 @@ namespace PetClinic.Application.Implementation
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public async Task DeleteVet(int vetId)
+        public async Task DeleteVet(int vetId, CancellationToken cancellationToken = default)
         {
             var existingVet = await _vetRepository.FindByIdAsync(vetId);
             _vetRepository.Remove(existingVet);

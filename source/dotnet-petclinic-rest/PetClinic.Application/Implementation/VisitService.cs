@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using Intent.RoslynWeaver.Attributes;
 using PetClinic.Application.Dtos;
 using PetClinic.Application.Interfaces;
+using PetClinic.Domain.Common.Exceptions;
 using PetClinic.Domain.Entities;
 using PetClinic.Domain.Repositories;
 
@@ -27,14 +29,14 @@ namespace PetClinic.Application.Implementation
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public async Task<VisitDTO> GetVisit(int visitId)
+        public async Task<VisitDTO> GetVisit(int visitId, CancellationToken cancellationToken = default)
         {
             var element = await _visitRepository.FindByIdAsync(visitId);
             return element.MapToVisitDTO(_mapper);
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public async Task AddVisit(VisitCreateDTO dto)
+        public async Task AddVisit(VisitCreateDTO dto, CancellationToken cancellationToken = default)
         {
             var newVisit = new Visit
             {
@@ -47,7 +49,7 @@ namespace PetClinic.Application.Implementation
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public async Task UpdateVisit(int visitId, VisitUpdateDTO dto)
+        public async Task UpdateVisit(int visitId, VisitUpdateDTO dto, CancellationToken cancellationToken = default)
         {
             var existingVisit = await _visitRepository.FindByIdAsync(visitId);
             existingVisit.VisitDate = dto.VisitDate;
@@ -55,7 +57,7 @@ namespace PetClinic.Application.Implementation
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public async Task DeleteVisit(int visitId)
+        public async Task DeleteVisit(int visitId, CancellationToken cancellationToken = default)
         {
             var existingVisit = await _visitRepository.FindByIdAsync(visitId);
             _visitRepository.Remove(existingVisit);

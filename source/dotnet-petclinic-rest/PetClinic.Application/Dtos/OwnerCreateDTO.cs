@@ -12,6 +12,11 @@ namespace PetClinic.Application.Dtos
     {
         public OwnerCreateDTO()
         {
+            FirstName = null!;
+            LastName = null!;
+            Address = null!;
+            City = null!;
+            Telephone = null!;
         }
 
         public static OwnerCreateDTO Create(string firstName, string lastName, string address, string city, string telephone)

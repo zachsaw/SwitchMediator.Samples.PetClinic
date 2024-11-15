@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using Intent.RoslynWeaver.Attributes;
 using PetClinic.Application.Dtos;
 using PetClinic.Application.Interfaces;
+using PetClinic.Domain.Common.Exceptions;
 using PetClinic.Domain.Common.Interfaces;
 using PetClinic.Domain.Entities;
 using PetClinic.Domain.Repositories;
@@ -30,21 +32,21 @@ namespace PetClinic.Application.Implementation
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public async Task<List<SpecialtyDTO>> GetAllSpecialties()
+        public async Task<List<SpecialtyDTO>> GetAllSpecialties(CancellationToken cancellationToken = default)
         {
             var elements = await _specialtyRepository.FindAllAsync();
             return elements.MapToSpecialtyDTOList(_mapper);
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public async Task<SpecialtyDTO> GetSpecialty(int specialtyId)
+        public async Task<SpecialtyDTO> GetSpecialty(int specialtyId, CancellationToken cancellationToken = default)
         {
             var element = await _specialtyRepository.FindByIdAsync(specialtyId);
             return element.MapToSpecialtyDTO(_mapper);
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public async Task<int> AddSpecialty(SpecialtyDTO dto)
+        public async Task<int> AddSpecialty(SpecialtyDTO dto, CancellationToken cancellationToken = default)
         {
             var newSpecialty = new Specialty
             {
@@ -57,14 +59,14 @@ namespace PetClinic.Application.Implementation
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public async Task UpdateSpecialty(int specialtyId, SpecialtyDTO dto)
+        public async Task UpdateSpecialty(int specialtyId, SpecialtyDTO dto, CancellationToken cancellationToken = default)
         {
             var existingSpecialty = await _specialtyRepository.FindByIdAsync(specialtyId);
             existingSpecialty.Name = dto.Name;
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public async Task DeleteSpecialty(int specialtyId)
+        public async Task DeleteSpecialty(int specialtyId, CancellationToken cancellationToken = default)
         {
             var existingSpecialty = await _specialtyRepository.FindByIdAsync(specialtyId);
             _specialtyRepository.Remove(existingSpecialty);

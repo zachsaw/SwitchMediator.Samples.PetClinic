@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using Intent.RoslynWeaver.Attributes;
 using PetClinic.Application.Dtos;
@@ -12,16 +13,11 @@ namespace PetClinic.Application.Interfaces
 
     public interface IVetService : IDisposable
     {
-
-        Task<List<VetDTO>> GetAllVets();
-
-        Task<VetDTO> GetVet(int vetId);
-
-        Task AddVet(VetCreateDTO dto);
-
-        Task UpdateVet(int vetId, VetUpdateDTO dto);
-
-        Task DeleteVet(int vetId);
+        Task<List<VetDTO>> GetAllVets(CancellationToken cancellationToken = default);
+        Task<VetDTO> GetVet(int vetId, CancellationToken cancellationToken = default);
+        Task AddVet(VetCreateDTO dto, CancellationToken cancellationToken = default);
+        Task UpdateVet(int vetId, VetUpdateDTO dto, CancellationToken cancellationToken = default);
+        Task DeleteVet(int vetId, CancellationToken cancellationToken = default);
 
     }
 }

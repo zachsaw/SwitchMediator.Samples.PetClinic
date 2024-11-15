@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<association id="d0759322-0d48-41b4-b0b1-a3927cc1d3e9">
+  <sourceEnd id="a8272622-99e9-4fe0-9fcb-fadb1b20652e" type="Call Service Operation Action Source End" typeId="936e090c-8408-429d-b2f6-2eb8deecc428">
+    <display>: OwnerEditComponent</display>
+    <order>1</order>
+    <typeReference id="d9919de7-35a6-4dfe-b0ce-8719e1004d4f">
+      <typeId>8a3ab41f-c9b7-44ef-a123-25c246ec6a15</typeId>
+      <isNavigable>true</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>Web Client</typePackageName>
+      <typePackageId>a58ecbe3-16da-44ee-a67b-edc733f9a696</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <metadata />
+    <childElements />
+  </sourceEnd>
+  <targetEnd id="d0759322-0d48-41b4-b0b1-a3927cc1d3e9" type="Call Service Operation Action Target End" typeId="475f0810-2b4a-40da-8eb8-697cb62f7dbe">
+    <display>@call getOwner(ownerId: int): OwnerDTO</display>
+    <order>3</order>
+    <typeReference id="aaaf819d-9ce8-4722-9085-2b017e753ca6">
+      <typeId>58424c7e-5474-47ad-8cd7-e97b6626b381</typeId>
+      <isNavigable>true</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>Web Client</typePackageName>
+      <typePackageId>a58ecbe3-16da-44ee-a67b-edc733f9a696</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <mappings>
+      <mapping type="Call Service Mapping" typeId="e4a4111b-cf13-4efe-8a5d-fea9457ac8ad">
+        <source applicationId="81d02285-f500-491b-bbc9-7c84dfe74a94" designerId="f492faed-0665-4513-9853-5a230721786f" elementId="8a3ab41f-c9b7-44ef-a123-25c246ec6a15" location="[Pet Clinic Web (Angular)].[Web Client].[OwnerEditComponent]" />
+        <target applicationId="81d02285-f500-491b-bbc9-7c84dfe74a94" designerId="f492faed-0665-4513-9853-5a230721786f" elementId="58424c7e-5474-47ad-8cd7-e97b6626b381" location="[Pet Clinic Web (Angular)].[Web Client].[getOwner]" />
+        <mappedEnds>
+          <mappedEnd>
+            <expression>{ownerId}</expression>
+            <path>
+              <target id="58424c7e-5474-47ad-8cd7-e97b6626b381" name="getOwner" type="element" specialization="Operation" />
+              <target id="42e77329-df72-4e4b-954b-6fb12c132769" name="ownerId" type="element" specialization="Parameter" />
+            </path>
+            <sources>
+              <source identifier="ownerId" mappingType="Data Mapping" mappingTypeId="ce70308a-e29d-4644-8410-f9e6bbd214fc">
+                <path>
+                  <target id="8a3ab41f-c9b7-44ef-a123-25c246ec6a15" name="OwnerEditComponent" type="element" specialization="Component" />
+                  <target id="16ae599f-65b5-4fa7-adb6-bd5728f98e59" name="ownerId" type="element" specialization="Component Input" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+        </mappedEnds>
+      </mapping>
+      <mapping type="Service Call Response Mapping" typeId="6f998e3e-6e1f-483f-b8fd-59c6632add77">
+        <source applicationId="3b9a6d6e-1cf0-4aea-b0bc-adac6ace7c4b" designerId="81104ae6-2bc5-4bae-b05a-f987b0372d81" elementId="0f5ea2e5-56e4-49c6-8652-6532dc79334c" location="[Pet Clinic Web (Angular)].[Web Client].[OwnerDTO]" />
+        <target applicationId="81d02285-f500-491b-bbc9-7c84dfe74a94" designerId="f492faed-0665-4513-9853-5a230721786f" elementId="8a3ab41f-c9b7-44ef-a123-25c246ec6a15" location="[Pet Clinic Web (Angular)].[Web Client].[OwnerEditComponent]" />
+        <mappedEnds>
+          <mappedEnd>
+            <expression>{id}</expression>
+            <path>
+              <target id="8a3ab41f-c9b7-44ef-a123-25c246ec6a15" name="OwnerEditComponent" type="element" specialization="Component" />
+              <target id="b7a29c71-98c3-49f7-9b4a-4d034facc86e" name="owner" type="element" specialization="Component Model" />
+              <target id="3535a49f-c2c8-45ed-a78a-f786971cb811" name="id" type="element" specialization="Form Group Control" />
+            </path>
+            <sources>
+              <source identifier="id" mappingType="Data Mapping" mappingTypeId="bbac21bb-9fdf-489e-8473-84be9cacc64d">
+                <path>
+                  <target id="0f5ea2e5-56e4-49c6-8652-6532dc79334c" name="OwnerDTO" type="element" specialization="DTO" />
+                  <target id="2143ef26-b53f-4d5c-a9c7-fe7b37e9acd8" name="id" type="element" specialization="DTO-Field" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+          <mappedEnd>
+            <expression>{firstName}</expression>
+            <path>
+              <target id="8a3ab41f-c9b7-44ef-a123-25c246ec6a15" name="OwnerEditComponent" type="element" specialization="Component" />
+              <target id="b7a29c71-98c3-49f7-9b4a-4d034facc86e" name="owner" type="element" specialization="Component Model" />
+              <target id="aeda0bbd-9fc5-407e-8b07-35afe7bddb09" name="firstName" type="element" specialization="Form Group Control" />
+            </path>
+            <sources>
+              <source identifier="firstName" mappingType="Data Mapping" mappingTypeId="bbac21bb-9fdf-489e-8473-84be9cacc64d">
+                <path>
+                  <target id="0f5ea2e5-56e4-49c6-8652-6532dc79334c" name="OwnerDTO" type="element" specialization="DTO" />
+                  <target id="aac6f4bb-9fe5-497b-928b-dd9f7885c76b" name="firstName" type="element" specialization="DTO-Field" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+          <mappedEnd>
+            <expression>{lastName}</expression>
+            <path>
+              <target id="8a3ab41f-c9b7-44ef-a123-25c246ec6a15" name="OwnerEditComponent" type="element" specialization="Component" />
+              <target id="b7a29c71-98c3-49f7-9b4a-4d034facc86e" name="owner" type="element" specialization="Component Model" />
+              <target id="18760587-5224-4fd1-9e03-a16ad929f29d" name="lastName" type="element" specialization="Form Group Control" />
+            </path>
+            <sources>
+              <source identifier="lastName" mappingType="Data Mapping" mappingTypeId="bbac21bb-9fdf-489e-8473-84be9cacc64d">
+                <path>
+                  <target id="0f5ea2e5-56e4-49c6-8652-6532dc79334c" name="OwnerDTO" type="element" specialization="DTO" />
+                  <target id="3aa01591-30c2-4513-b1ad-a8b6f12b5344" name="lastName" type="element" specialization="DTO-Field" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+          <mappedEnd>
+            <expression>{address}</expression>
+            <path>
+              <target id="8a3ab41f-c9b7-44ef-a123-25c246ec6a15" name="OwnerEditComponent" type="element" specialization="Component" />
+              <target id="b7a29c71-98c3-49f7-9b4a-4d034facc86e" name="owner" type="element" specialization="Component Model" />
+              <target id="537965ba-3088-4ff1-b04f-2816b2572b16" name="address" type="element" specialization="Form Group Control" />
+            </path>
+            <sources>
+              <source identifier="address" mappingType="Data Mapping" mappingTypeId="bbac21bb-9fdf-489e-8473-84be9cacc64d">
+                <path>
+                  <target id="0f5ea2e5-56e4-49c6-8652-6532dc79334c" name="OwnerDTO" type="element" specialization="DTO" />
+                  <target id="0bedb74e-4602-4a12-a566-0cd249b699ee" name="address" type="element" specialization="DTO-Field" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+          <mappedEnd>
+            <expression>{city}</expression>
+            <path>
+              <target id="8a3ab41f-c9b7-44ef-a123-25c246ec6a15" name="OwnerEditComponent" type="element" specialization="Component" />
+              <target id="b7a29c71-98c3-49f7-9b4a-4d034facc86e" name="owner" type="element" specialization="Component Model" />
+              <target id="5f25b775-97e6-42f0-b266-da75e971f65d" name="city" type="element" specialization="Form Group Control" />
+            </path>
+            <sources>
+              <source identifier="city" mappingType="Data Mapping" mappingTypeId="bbac21bb-9fdf-489e-8473-84be9cacc64d">
+                <path>
+                  <target id="0f5ea2e5-56e4-49c6-8652-6532dc79334c" name="OwnerDTO" type="element" specialization="DTO" />
+                  <target id="e807f019-699a-4dac-a18b-4a05f24b9f91" name="city" type="element" specialization="DTO-Field" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+          <mappedEnd>
+            <expression>{telephone}</expression>
+            <path>
+              <target id="8a3ab41f-c9b7-44ef-a123-25c246ec6a15" name="OwnerEditComponent" type="element" specialization="Component" />
+              <target id="b7a29c71-98c3-49f7-9b4a-4d034facc86e" name="owner" type="element" specialization="Component Model" />
+              <target id="c65e687b-b00f-4fa2-a680-588471c8c99b" name="telephone" type="element" specialization="Form Group Control" />
+            </path>
+            <sources>
+              <source identifier="telephone" mappingType="Data Mapping" mappingTypeId="bbac21bb-9fdf-489e-8473-84be9cacc64d">
+                <path>
+                  <target id="0f5ea2e5-56e4-49c6-8652-6532dc79334c" name="OwnerDTO" type="element" specialization="DTO" />
+                  <target id="fb907c3b-9e5a-4929-821a-bd32c73e3b36" name="telephone" type="element" specialization="DTO-Field" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+        </mappedEnds>
+      </mapping>
+    </mappings>
+    <metadata />
+    <childElements />
+  </targetEnd>
+  <associationType>Call Service Operation Action</associationType>
+  <associationTypeId>fe5a5cd8-aabd-472f-8d42-f5c233e658dc</associationTypeId>
+  <stereotypes />
+</association>
