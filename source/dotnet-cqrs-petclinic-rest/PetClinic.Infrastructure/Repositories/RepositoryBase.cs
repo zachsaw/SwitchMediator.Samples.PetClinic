@@ -177,38 +177,5 @@ namespace PetClinic.Infrastructure.Repositories
         {
             return await _dbContext.SaveChangesAsync(cancellationToken);
         }
-
-        public async Task<List<TProjection>> FindAllProjectToAsync<TProjection>(
-            Func<IQueryable<TPersistence>, IQueryable<TPersistence>>? queryOptions = default,
-            CancellationToken cancellationToken = default)
-        {
-            var queryable = QueryInternal(queryOptions);
-            var projection = queryable.ProjectTo<TProjection>(_mapper.ConfigurationProvider);
-            return await projection.ToListAsync(cancellationToken);
-        }
-
-        public async Task<IPagedResult<TProjection>> FindAllProjectToAsync<TProjection>(
-            int pageNo,
-            int pageSize,
-            Func<IQueryable<TPersistence>, IQueryable<TPersistence>>? queryOptions = default,
-            CancellationToken cancellationToken = default)
-        {
-            var queryable = QueryInternal(queryOptions);
-            var projection = queryable.ProjectTo<TProjection>(_mapper.ConfigurationProvider);
-            return await ToPagedListAsync(
-                projection,
-                pageNo,
-                pageSize,
-                cancellationToken);
-        }
-
-        public async Task<TProjection?> FindProjectToAsync<TProjection>(
-            Func<IQueryable<TPersistence>, IQueryable<TPersistence>> queryOptions,
-            CancellationToken cancellationToken = default)
-        {
-            var queryable = QueryInternal(queryOptions);
-            var projection = queryable.ProjectTo<TProjection>(_mapper.ConfigurationProvider);
-            return await projection.FirstOrDefaultAsync(cancellationToken);
-        }
     }
 }

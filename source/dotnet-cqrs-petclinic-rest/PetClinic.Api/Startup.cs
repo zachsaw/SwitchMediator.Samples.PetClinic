@@ -36,11 +36,11 @@ namespace PetClinic.Api
             services.AddControllers(
                 opt =>
                 {
-                    opt.Filters.Add<FluentValidationFilter>();
+                    // opt.Filters.Add<FluentValidationFilter>();
                 });
-            services.ConfigureCors();
+            services.ConfigureCors(Configuration);
             services.ConfigureApplicationSecurity(Configuration);
-            services.AddApplication();
+            services.AddApplication(Configuration);
             services.AddInfrastructure(Configuration);
             services.ConfigureSwagger(Configuration);
         }
@@ -63,7 +63,7 @@ namespace PetClinic.Api
             {
                 endpoints.MapControllers();
             });
-            app.UseSwashbuckle();
+            app.UseSwashbuckle(Configuration);
         }
     }
 }
