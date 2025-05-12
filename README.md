@@ -1,4 +1,11 @@
 # Samples-PetClinic
+
+We're using the CQRS PetClinic sample in the [source/dotnet-cqrs-petclinic-rest](source/dotnet-cqrs-petclinic-rest) folder to demo SwitchMediator as a replacement for the now ancient and costly MediatR.
+
+---
+
+### Original README:
+
 Inspired by the [Spring Petclinic sample](https://projects.spring.io/spring-petclinic/), this repository uses [Intent Architect](https://intentarchitect.com) to model the same application for different languages and technologies using the same Domain and Services metadata and a single front-end that integrates to all the RESTful backends.
 
 ## Overview
@@ -75,6 +82,3 @@ npm run start
 ```
 >!TIP
 Start up one of the servers listed above to allow this front-end to communicate with a local API.
-
-
-
