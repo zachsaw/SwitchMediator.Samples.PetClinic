@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Intent.RoslynWeaver.Attributes;
-using MediatR;
+using Mediator.Switch;
 using PetClinic.Domain.Common.Exceptions;
 using PetClinic.Domain.Repositories;
 
@@ -13,7 +13,7 @@ using PetClinic.Domain.Repositories;
 namespace PetClinic.Application.Owners.UpdateOwner
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    public class UpdateOwnerCommandHandler : IRequestHandler<UpdateOwnerCommand>
+    public class UpdateOwnerCommandHandler : IRequestHandler<UpdateOwnerCommand, Unit>
     {
         private readonly IOwnerRepository _ownerRepository;
 
@@ -24,7 +24,7 @@ namespace PetClinic.Application.Owners.UpdateOwner
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Fully)]
-        public async Task Handle(UpdateOwnerCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(UpdateOwnerCommand request, CancellationToken cancellationToken)
         {
             var existingOwner = await _ownerRepository.FindByIdAsync(request.Id, cancellationToken);
             if (existingOwner is null)
@@ -38,6 +38,7 @@ namespace PetClinic.Application.Owners.UpdateOwner
             existingOwner.City = request.City;
             existingOwner.Telephone = request.Telephone;
 
+            return Unit.Value;
         }
     }
 }

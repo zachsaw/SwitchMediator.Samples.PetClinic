@@ -2,7 +2,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Transactions;
 using Intent.RoslynWeaver.Attributes;
-using MediatR;
+using Mediator.Switch;
 using PetClinic.Application.Common.Interfaces;
 using PetClinic.Domain.Common.Interfaces;
 

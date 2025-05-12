@@ -2,7 +2,8 @@ using System.Reflection;
 using AutoMapper;
 using FluentValidation;
 using Intent.RoslynWeaver.Attributes;
-using MediatR;
+using Mediator.Switch;
+using Mediator.Switch.Extensions.Microsoft.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PetClinic.Application.Common.Behaviours;
@@ -18,14 +19,9 @@ namespace PetClinic.Application
         public static IServiceCollection AddApplication(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly(), lifetime: ServiceLifetime.Transient);
-            services.AddMediatR(cfg =>
+            services.AddMediator<SwitchMediator>(cfg =>
             {
-                cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
-                cfg.AddOpenBehavior(typeof(UnhandledExceptionBehaviour<,>));
-                cfg.AddOpenBehavior(typeof(PerformanceBehaviour<,>));
-                cfg.AddOpenBehavior(typeof(AuthorizationBehaviour<,>));
-                cfg.AddOpenBehavior(typeof(ValidationBehaviour<,>));
-                cfg.AddOpenBehavior(typeof(UnitOfWorkBehaviour<,>));
+                cfg.KnownTypes = SwitchMediator.KnownTypes;
             });
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddScoped<IValidatorProvider, ValidatorProvider>();

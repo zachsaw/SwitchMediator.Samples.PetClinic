@@ -1,7 +1,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Intent.RoslynWeaver.Attributes;
-using MediatR.Pipeline;
+using Mediator.Switch;
 using Microsoft.Extensions.Logging;
 using PetClinic.Application.Common.Interfaces;
 
@@ -10,7 +10,8 @@ using PetClinic.Application.Common.Interfaces;
 
 namespace PetClinic.Application.Common.Behaviours
 {
-    public class LoggingBehaviour<TRequest> : IRequestPreProcessor<TRequest>
+    [PipelineBehaviorOrder(1)]
+    public class LoggingBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
         where TRequest : notnull
     {
         private readonly ILogger _logger;
@@ -22,7 +23,8 @@ namespace PetClinic.Application.Common.Behaviours
             _currentUserService = currentUserService;
         }
 
-        public Task Process(TRequest request, CancellationToken cancellationToken)
+        public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next,
+            CancellationToken cancellationToken)
         {
             var requestName = typeof(TRequest).Name;
             var userId = _currentUserService.UserId ?? string.Empty;
@@ -30,7 +32,7 @@ namespace PetClinic.Application.Common.Behaviours
 
             _logger.LogInformation("Pet Clinic CQRS Rest (.NET) Request: {Name} {@UserId} {@UserName} {@Request}",
                 requestName, userId, userName, request);
-            return Task.CompletedTask;
+            return await next();
         }
     }
 }

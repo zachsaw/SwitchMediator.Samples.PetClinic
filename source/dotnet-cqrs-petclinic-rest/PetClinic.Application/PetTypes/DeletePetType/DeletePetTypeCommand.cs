@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Intent.RoslynWeaver.Attributes;
-using MediatR;
+using Mediator.Switch;
 using PetClinic.Application.Common.Interfaces;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
@@ -9,7 +9,7 @@ using PetClinic.Application.Common.Interfaces;
 
 namespace PetClinic.Application.PetTypes.DeletePetType
 {
-    public class DeletePetTypeCommand : IRequest, ICommand
+    public class DeletePetTypeCommand : IRequest<Unit>, ICommand
     {
         public DeletePetTypeCommand(int id)
         {

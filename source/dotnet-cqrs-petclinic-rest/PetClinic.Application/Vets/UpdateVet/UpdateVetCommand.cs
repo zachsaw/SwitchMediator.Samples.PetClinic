@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Intent.RoslynWeaver.Attributes;
-using MediatR;
+using Mediator.Switch;
 using PetClinic.Application.Common.Interfaces;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
@@ -9,7 +9,7 @@ using PetClinic.Application.Common.Interfaces;
 
 namespace PetClinic.Application.Vets.UpdateVet
 {
-    public class UpdateVetCommand : IRequest, ICommand
+    public class UpdateVetCommand : IRequest<Unit>, ICommand
     {
         public UpdateVetCommand(int id, string firstName, string lastName)
         {

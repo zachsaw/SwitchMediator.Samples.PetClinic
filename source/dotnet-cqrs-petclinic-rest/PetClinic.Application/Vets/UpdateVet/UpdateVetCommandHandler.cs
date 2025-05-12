@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Intent.RoslynWeaver.Attributes;
-using MediatR;
+using Mediator.Switch;
 using PetClinic.Domain.Common.Exceptions;
 using PetClinic.Domain.Repositories;
 
@@ -13,7 +13,7 @@ using PetClinic.Domain.Repositories;
 namespace PetClinic.Application.Vets.UpdateVet
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    public class UpdateVetCommandHandler : IRequestHandler<UpdateVetCommand>
+    public class UpdateVetCommandHandler : IRequestHandler<UpdateVetCommand, Unit>
     {
         private readonly IVetRepository _vetRepository;
 
@@ -24,7 +24,7 @@ namespace PetClinic.Application.Vets.UpdateVet
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Fully)]
-        public async Task Handle(UpdateVetCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(UpdateVetCommand request, CancellationToken cancellationToken)
         {
             var existingVet = await _vetRepository.FindByIdAsync(request.Id, cancellationToken);
             if (existingVet is null)
@@ -35,6 +35,7 @@ namespace PetClinic.Application.Vets.UpdateVet
             existingVet.FirstName = request.FirstName;
             existingVet.LastName = request.LastName;
 
+            return Unit.Value;
         }
     }
 }
