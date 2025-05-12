@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using Intent.RoslynWeaver.Attributes;
-using MediatR;
+using Mediator.Switch;
 using PetClinic.Domain.Repositories;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]

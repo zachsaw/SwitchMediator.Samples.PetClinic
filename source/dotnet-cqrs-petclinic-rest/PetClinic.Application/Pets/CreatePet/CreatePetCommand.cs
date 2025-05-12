@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Intent.RoslynWeaver.Attributes;
-using MediatR;
+using Mediator.Switch;
 using PetClinic.Application.Common.Interfaces;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]

@@ -2,7 +2,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Intent.RoslynWeaver.Attributes;
-using MediatR;
+using Mediator.Switch;
 using PetClinic.Domain.Common.Exceptions;
 using PetClinic.Domain.Repositories;
 
@@ -12,7 +12,7 @@ using PetClinic.Domain.Repositories;
 namespace PetClinic.Application.PetTypes.DeletePetType
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    public class DeletePetTypeCommandHandler : IRequestHandler<DeletePetTypeCommand>
+    public class DeletePetTypeCommandHandler : IRequestHandler<DeletePetTypeCommand, Unit>
     {
         private readonly IPetTypeRepository _petTypeRepository;
 
@@ -23,7 +23,7 @@ namespace PetClinic.Application.PetTypes.DeletePetType
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Fully)]
-        public async Task Handle(DeletePetTypeCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(DeletePetTypeCommand request, CancellationToken cancellationToken)
         {
             var existingPetType = await _petTypeRepository.FindByIdAsync(request.Id, cancellationToken);
             if (existingPetType is null)
@@ -33,6 +33,7 @@ namespace PetClinic.Application.PetTypes.DeletePetType
 
             _petTypeRepository.Remove(existingPetType);
 
+            return Unit.Value;
         }
     }
 }

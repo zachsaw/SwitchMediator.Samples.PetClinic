@@ -2,7 +2,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Intent.RoslynWeaver.Attributes;
-using MediatR;
+using Mediator.Switch;
 using PetClinic.Domain.Common.Exceptions;
 using PetClinic.Domain.Repositories;
 
@@ -12,7 +12,7 @@ using PetClinic.Domain.Repositories;
 namespace PetClinic.Application.Visits.DeleteVisit
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    public class DeleteVisitCommandHandler : IRequestHandler<DeleteVisitCommand>
+    public class DeleteVisitCommandHandler : IRequestHandler<DeleteVisitCommand, Unit>
     {
         private readonly IVisitRepository _visitRepository;
 
@@ -23,7 +23,7 @@ namespace PetClinic.Application.Visits.DeleteVisit
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Fully)]
-        public async Task Handle(DeleteVisitCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(DeleteVisitCommand request, CancellationToken cancellationToken)
         {
             var existingVisit = await _visitRepository.FindByIdAsync(request.Id, cancellationToken);
             if (existingVisit is null)
@@ -33,6 +33,7 @@ namespace PetClinic.Application.Visits.DeleteVisit
 
             _visitRepository.Remove(existingVisit);
 
+            return Unit.Value;
         }
     }
 }

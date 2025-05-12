@@ -2,7 +2,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Intent.RoslynWeaver.Attributes;
-using MediatR;
+using Mediator.Switch;
 using PetClinic.Domain.Common.Exceptions;
 using PetClinic.Domain.Repositories;
 
@@ -12,7 +12,7 @@ using PetClinic.Domain.Repositories;
 namespace PetClinic.Application.Owners.DeleteOwner
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    public class DeleteOwnerCommandHandler : IRequestHandler<DeleteOwnerCommand>
+    public class DeleteOwnerCommandHandler : IRequestHandler<DeleteOwnerCommand, Unit>
     {
         private readonly IOwnerRepository _ownerRepository;
 
@@ -23,7 +23,7 @@ namespace PetClinic.Application.Owners.DeleteOwner
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Fully)]
-        public async Task Handle(DeleteOwnerCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(DeleteOwnerCommand request, CancellationToken cancellationToken)
         {
             var existingOwner = await _ownerRepository.FindByIdAsync(request.Id, cancellationToken);
             if (existingOwner is null)
@@ -32,7 +32,7 @@ namespace PetClinic.Application.Owners.DeleteOwner
             }
 
             _ownerRepository.Remove(existingOwner);
-
+            return Unit.Value;
         }
     }
 }

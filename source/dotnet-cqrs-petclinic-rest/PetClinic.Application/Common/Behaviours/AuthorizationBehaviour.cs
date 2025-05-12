@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using Intent.RoslynWeaver.Attributes;
-using MediatR;
+using Mediator.Switch;
 using PetClinic.Application.Common.Exceptions;
 using PetClinic.Application.Common.Interfaces;
 using PetClinic.Application.Common.Security;

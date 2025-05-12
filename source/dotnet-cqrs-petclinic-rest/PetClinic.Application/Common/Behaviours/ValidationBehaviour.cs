@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using FluentValidation;
 using Intent.RoslynWeaver.Attributes;
-using MediatR;
+using Mediator.Switch;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.Application.MediatR.FluentValidation.ValidationBehaviour", Version = "1.0")]
